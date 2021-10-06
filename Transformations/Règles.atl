@@ -1,0 +1,42 @@
+-- @path MMActivity=/TP2_Activité_en_Etat/MetaModels/MetaModel_Activité.ecore
+-- @path MMstatemachine=/TP2_Activité_en_Etat/MetaModels/MetaModel_Etat.ecore
+
+module Regles;
+
+create OUT : MMstatemachine from IN : MMActivity;
+
+	rule R1 {
+		from
+			dto : MMActivity!ObjectNode
+		to
+			nrstt: MMstatemachine!NormalState (
+			name <- dto.name ) }
+	rule R2 {
+		from
+			frkp : MMActivity!ForkNode
+		to
+			frks : MMstatemachine!ForkState (
+			name <- frkp.name )}
+	rule R3 {
+		from
+			jnp : MMActivity!JoinNode
+		to
+			jns : MMstatemachine!JointState (
+			name <- jnp.name) }
+	rule R4 {
+		from
+			strtevnt : MMActivity!InitialNode
+		to
+			intstt: MMstatemachine!InitialState }
+	rule R5 {
+		from
+			ende : MMActivity!FinalNode
+		to
+			fnls : MMstatemachine!FinalState }
+	rule R6 {
+		from
+			sqcf : MMActivity!ControlFlow
+		to
+			trst : MMstatemachine!Transition (
+			name <- sqcf.name
+			 ) }

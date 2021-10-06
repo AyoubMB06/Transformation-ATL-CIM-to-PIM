@@ -1,0 +1,19 @@
+<?xml version="1.0" encoding="ISO-8859-1"?>
+<xmi:XMI xmi:version="2.0" xmlns:xmi="http://www.omg.org/XMI" xmlns:Etat="www.etat.com">
+  <Etat:NormalState name="catalog Presented"/>
+  <Etat:NormalState name="product Designed"/>
+  <Etat:NormalState name="product Quantity Put In Cart"/>
+  <Etat:NormalState name="produced Quantity Changed"/>
+  <Etat:NormalState name="produced Quantity Eliminated"/>
+  <Etat:NormalState name="cart Filled"/>
+  <Etat:NormalState name="order Started"/>
+  <Etat:JointState/>
+  <Etat:FinalState/>
+  <Etat:Transition name="present Catalog"/>
+  <Etat:Transition name="designate Product"/>
+  <Etat:Transition name="put In Cart Product Quantity"/>
+  <Etat:Transition name="change Product Quantity"/>
+  <Etat:Transition name="eliminate Product Quantity"/>
+  <Etat:Transition name="complete Filling of cart"/>
+  <Etat:Transition name="Start Order"/>
+</xmi:XMI>
